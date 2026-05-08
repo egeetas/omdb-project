@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieFinder - OMDB Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo" id="home-btn">
+                <i class="fas fa-film"></i>
+                <h1>MovieFinder</h1>
+            </div>
+            <div class="search-container" id="search-section">
+                <form id="search-form">
+                    <div class="input-group">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="search-input" placeholder="Search for a movie..." autocomplete="off">
+                        <button type="submit" class="search-btn">Search</button>
+                    </div>
+                    <div class="filters">
+                        <select id="type-filter">
+                            <option value="">All Types</option>
+                            <option value="movie">Movie</option>
+                            <option value="series">Series</option>
+                            <option value="episode">Episode</option>
+                        </select>
+                        <input type="number" id="year-filter" placeholder="Year" min="1800" max="2099">
+                    </div>
+                </form>
+            </div>
+        </header>
+
+        <main>
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Searching for movies...</p>
+            </div>
+            
+            <div id="error-message" class="hidden">
+                <i class="fas fa-exclamation-circle"></i>
+                <p id="error-text">Movie not found.</p>
+            </div>
+
+            <div id="movie-results" class="results-grid">
+                <!-- Search results will appear here -->
+            </div>
+
+            <div id="movie-details" class="hidden">
+                <!-- Detailed view will appear here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
